@@ -7,10 +7,10 @@ before_script:
       -e DOCKER_USERNAME=${DOCKER_USERNAME} \
       -e DOCKER_PASSWORD=${DOCKER_PASSWORD} \
       -e GITHUB_URL=${GITHUB_URL} \
-      --name docker-test \
+      --name pipeline \
       piotrmurbanski/docker-test:latest
 script:
-  - docker exec docker-test /stages/01_clone.sh
-  - docker exec docker-test /stages/02_build.sh
-  - docker exec docker-test /stages/03_test.sh
-  - docker exec docker-test /stages/04_archive.sh
+  - docker exec pipeline /stages/01_clone.sh
+  - docker exec pipeline /stages/02_build.sh
+  - docker exec pipeline /stages/03_test.sh
+  - docker exec pipeline /stages/04_archive.sh
