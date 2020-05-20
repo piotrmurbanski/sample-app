@@ -7,7 +7,7 @@ before_script:
       -e DOCKER_USERNAME=${DOCKER_USERNAME} \
       -e DOCKER_PASSWORD=${DOCKER_PASSWORD} \
       -e GITHUB_URL=${GITHUB_URL} \
-      --name docker-test \
+      --name pipeline \
       piotrmurbanski/pipeline:latest
 script:
   - docker exec pipeline /stages/01_clone.sh
